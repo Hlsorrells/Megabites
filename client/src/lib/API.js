@@ -19,13 +19,19 @@ export default {
     }
   },
 
-  Secrets: {
-    getAll: function (authToken) {
-      return axios.get('/api/secrets', {
+  Recipes: {
+    all: function() {
+      return axios.get('/api/recipes/all', {})
+    },
+
+    create: function(authToken, title, image, description, prepTime, cookTime, servings, directions, categories, ingredients) {
+      return axios.post('/api/recipes/', {
+        title, image, description, prepTime, cookTime, servings, directions, categories, ingredients
+      }, {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }
-      });
+      }).catch(err => console.log(err));
     }
   }
 }
