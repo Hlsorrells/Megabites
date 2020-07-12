@@ -27,3 +27,45 @@ const RecipeCard = () => (
 )
 
 export default RecipeCard;
+
+// const CardLayout = (props) => {
+//   const recipeArea = props.recipes.map(recipe => {
+//     return(
+//       <Card>
+//           <Image
+//             src={require("../../assets/images/burger1.jpg")}
+//             wrapped
+//             ui={false}
+//             as="a"
+//             href="https://www.thewholesomedish.com/the-best-classic-burger/"
+//             target="_blank"
+//           />
+//           <Card.Content>
+//             <Card.Header>{recipe.title}</Card.Header>
+//             <Card.Meta>
+//               <span>{recipe.category}</span>
+//             </Card.Meta>
+//             <Card.Description>
+//               {recipe.description}
+//             </Card.Description>
+//             <Card.Meta>
+//               <span>
+//                 Submitted by: <strong>{recipe.createdBy}</strong>
+//               </span>
+//             </Card.Meta>
+//           </Card.Content>
+//           <Card.Content>{extra}</Card.Content>
+//         </Card>
+//     )
+//   })
+
+//   return (
+//     <Container className="test">
+//       <Card.Group className="background" itemsPerRow={3}>
+//         {recipeArea}
+//       </Card.Group>
+//     </Container>
+//   );
+// };
+
+// export default CardLayout;
