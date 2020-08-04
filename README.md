@@ -59,6 +59,9 @@ Members also have the added feature of saving a community recipe to their page. 
 
 An additional feature for members is the delete button on their personal page. When users save a recipe to their personal page, they have the ability to delete the recipes they are no longer interested in keeping. While the recipe is removed from the member's personal page, it remains available to other users through the community home page.
 
+**UPDATED FEATURE (08/2020)**
+Members can now submit reviews on recipes including a star rating to promote favorites to the community. Reviews will only show the member's username so privacy is maintained. Star ratings can be seen on the homepage while in the full review can be read on the recipe page.
+
 
 ## Screenshots
 
@@ -118,6 +121,10 @@ An additional feature for members is the delete button on their personal page. W
     GIVEN I would like to create and share a recipe
     WHEN I complete the Add Recipe Form
     THEN I find the recipe is available to all users on the home page and also on my personal page
+
+    GIVEN I would like to submit a review on a recipe that I have tried
+    WHEN I click on the leave review button
+    THEN I can post a review and star rating to that particular recipe
     ```
 </details>
 ----
