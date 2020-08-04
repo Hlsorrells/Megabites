@@ -8,7 +8,7 @@ Megabites provides users with a place to find, create and share recipes. Users a
 
 [Megabites](https://https://megabytes.herokuapp.com/)
 
-![](assets/images/.gif)
+![](assets/images/megabites.gif)
 
 ## Table of Contents
 
