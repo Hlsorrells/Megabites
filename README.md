@@ -1,14 +1,14 @@
 # Megabites Recipe App
 
 ## Description
-Megabites provides users with a place to find, create and share recipes. Users are free to create recipes, browse recipes posted by others, and save recipes to their profiles. Recipes are easy to find and use and are not buried beneath 1500 lines of the creator’s story about how they found this recipe in the first place.
+Megabites provides users with a place to find, create and share recipes. Users are free to create recipes, browse recipes posted by others, create reviews on recipes, and save recipes to their profiles. Recipes are easy to find and use and are not buried beneath 1500 lines of the creator’s story about how they found this recipe in the first place.
 
 
 ## Deployment
 
 [Megabites](https://https://megabytes.herokuapp.com/)
 
-![](assets/images/megabites.gif)
+![](./assets/images/megabites.gif)
 
 ## Table of Contents
 
@@ -59,8 +59,10 @@ Members also have the added feature of saving a community recipe to their page. 
 
 An additional feature for members is the delete button on their personal page. When users save a recipe to their personal page, they have the ability to delete the recipes they are no longer interested in keeping. While the recipe is removed from the member's personal page, it remains available to other users through the community home page.
 
-**UPDATED FEATURE (08/2020)**
-Members can now submit reviews on recipes including a star rating to promote favorites to the community. Reviews will only show the member's username so privacy is maintained. Star ratings can be seen on the homepage while in the full review can be read on the recipe page.
+**NEW FEATURE (08/2020)**
+Courtesy of Thomas Rider and Heather Sorrells
+
+Members can now submit reviews on recipes including a star rating to promote favorites to the community. Reviews will only show the member's username so privacy is maintained. The recipe does not have to be saved to the member's page in order to be reviewed which allows members to comment on recipes that they may not have enjoyed. The homepage reflects the average star rating for each recipe. All of the reviews can be read inside the full recipe page.
 
 
 ## Screenshots
