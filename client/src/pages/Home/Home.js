@@ -20,6 +20,7 @@ class HomePage extends Component {
     API.Recipes.all()
       .then((response) => {
         recipes = response.data
+        console.log(recipes)
         // this.setState({ recipes: response.data, err: "" });
       })
       .then(
@@ -48,7 +49,7 @@ class HomePage extends Component {
         <div className="bgStyle">
           <TopRail filteredList={this.filteredList}/>
           <LeftRail filteredList={this.filteredList}/>
-          <CardLayout recipes={this.state.recipes}/>
+          <CardLayout recipes={this.state.recipes} reviews={this.state.reviews} />
         </div>
       </div>
     );
