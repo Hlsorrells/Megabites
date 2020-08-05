@@ -10,14 +10,26 @@ class HomePage extends Component {
 
   state = {
     recipes: [],
+    reviews: [],
     err: "",
   };
 
   componentDidMount() {
+    let recipes
+    let reviews
     API.Recipes.all()
       .then((response) => {
-        this.setState({ recipes: response.data, err: "" });
+        recipes = response.data
+        // this.setState({ recipes: response.data, err: "" });
       })
+      .then(
+        API.Reviews.all()
+        .then((resp) => {
+          reviews = resp.data
+          this.setState({ recipes: recipes, reviews: reviews, err: "" })
+          console.log(this.state)
+        })
+      )
       .catch((err) => this.setState({ err: err.message }));
   }  
 

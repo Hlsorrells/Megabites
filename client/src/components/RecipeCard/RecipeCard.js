@@ -20,7 +20,7 @@ class RecipeCard extends Component {
   }
 
   render() {
-    const recipes = this.props.recipes.map((recipe) => {
+    const recipes = this.props.recipes ? this.props.recipes.map((recipe) => {
       const { authToken } = this.context;
       let link = "/recipe/" + recipe.id
       let button;
@@ -53,7 +53,7 @@ class RecipeCard extends Component {
           {/* <Card.Content>{extra}</Card.Content> */}
         </Card>
       );
-    });
+    }) : null;
 
     return (
       <Container>
