@@ -1,14 +1,14 @@
 # Megabites Recipe App
 
 ## Description
-Megabites provides users with a place to find, create and share recipes. Users are free to create recipes, browse recipes posted by others, and save recipes to their profiles. Recipes are easy to find and use and are not buried beneath 1500 lines of the creator’s story about how they found this recipe in the first place.
+Megabites provides users with a place to find, create and share recipes. Users are free to create recipes, browse recipes posted by others, create reviews on recipes, and save recipes to their profiles. Recipes are easy to find and use and are not buried beneath 1500 lines of the creator’s story about how they found this recipe in the first place.
 
 
 ## Deployment
 
 [Megabites](https://https://megabytes.herokuapp.com/)
 
-![](assets/images/.gif)
+![](./assets/images/megabites.gif)
 
 ## Table of Contents
 
@@ -58,6 +58,11 @@ Member users can create a recipe by clicking on the down arrow next to their mem
 Members also have the added feature of saving a community recipe to their page. Once a user is logged in, a save button appears at the bottom of each recipe card. Users can click on this button while browsing to add recipes to their personal page. The save button will not redirect the user to their homepage, but remain on the community page to allow the user to continue browsing without losing their place. Users will also find this save button located on the full recipe page to make saving new and interesting recipes very easy.
 
 An additional feature for members is the delete button on their personal page. When users save a recipe to their personal page, they have the ability to delete the recipes they are no longer interested in keeping. While the recipe is removed from the member's personal page, it remains available to other users through the community home page.
+
+**NEW FEATURE (08/2020)**
+Courtesy of Thomas Rider and Heather Sorrells
+
+Members can now submit reviews on recipes including a star rating to promote favorites to the community. Reviews will only show the member's username so privacy is maintained. The recipe does not have to be saved to the member's page in order to be reviewed which allows members to comment on recipes that they may not have enjoyed. The homepage reflects the average star rating for each recipe. All of the reviews can be read inside the full recipe page.
 
 
 ## Screenshots
@@ -118,6 +123,10 @@ An additional feature for members is the delete button on their personal page. W
     GIVEN I would like to create and share a recipe
     WHEN I complete the Add Recipe Form
     THEN I find the recipe is available to all users on the home page and also on my personal page
+
+    GIVEN I would like to submit a review on a recipe that I have tried
+    WHEN I click on the leave review button
+    THEN I can post a review and star rating to that particular recipe
     ```
 </details>
 ----
