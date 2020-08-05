@@ -45,7 +45,6 @@ class RecipeCard extends Component {
             src={recipe.image}
             wrapped
             ui={false}
-            target="_blank"
           />
           <Card.Content as={Link} to={link}>
             <Card.Header>{recipe.title}</Card.Header>
