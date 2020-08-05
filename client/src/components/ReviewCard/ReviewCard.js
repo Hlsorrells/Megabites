@@ -10,7 +10,6 @@ import {
 class ReviewCard extends Component {
   render() {
     let reviews = this.props.reviews
-    console.log(reviews)
 
     return (
       <Card fluid>

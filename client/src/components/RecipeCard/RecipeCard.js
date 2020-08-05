@@ -34,7 +34,6 @@ class RecipeCard extends Component {
       this.props.reviews.forEach(reviewData => {
         if (recipe.id === reviewData.RecipeId) {
           rating = Math.round(reviewData.stars)
-          console.log(rating)
         }
       })
 
