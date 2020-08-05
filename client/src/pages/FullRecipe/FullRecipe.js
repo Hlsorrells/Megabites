@@ -19,26 +19,21 @@ class FullRecipe extends Component {
   }
 
   componentDidMount() {
-    let recipe
-    //console.log(this.props.match.params.id)
+
     API.Recipes.byId(this.props.match.params.id)
       .then((recipe) => {
         this.setState({ recipe: recipe.data[0], err: "" })
-        console.log(this.state)
       })
-      // .then(API.Reviews.all()
-      // .then((reviews) => {
-      //   console.log(reviews)
-      //   recipe = this.state.recipe
-      //   this.setState({ recipe: recipe, reviews: reviews.data, err: "" })
-      // } ))
+
       .catch((err) => this.setState({ err: err.message }))
+
+      window.scrollTo(0, 0)
   }
 
 
 
   render() {
-    console.log(this.state.recipe.Reviews)
+    
     return (
       <div>
         <Image centered src={require("../../assets/images/megabitesLogo.png")} />

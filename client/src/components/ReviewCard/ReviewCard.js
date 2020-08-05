@@ -10,15 +10,14 @@ import {
 class ReviewCard extends Component {
   render() {
     let reviews = this.props.reviews
-    console.log(reviews)
 
     return (
       <Card fluid>
-          <Card.Content header="Reviews:">
-
+          <Card.Content>
+            <Card.Header>Reviews:</Card.Header>
         <Feed>
           {reviews.map((review) => (
-            <Feed.Event key={review ? review.User.username : null}>
+            <Feed.Event key={review ? review.id : null}>
               <Feed.Content>
                 <Feed.Summary>
                   <Feed.User>{review ? review.User.username : null}</Feed.User> posted a review!

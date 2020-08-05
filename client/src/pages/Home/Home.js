@@ -7,9 +7,9 @@ import "./Home.css";
 import API from "../../lib/API";
 
 class HomePage extends Component {
-
   state = {
     recipes: [],
+    reviews: [],
     err: "",
   };
 
@@ -19,24 +19,35 @@ class HomePage extends Component {
         this.setState({ recipes: response.data, err: "" });
       })
       .catch((err) => this.setState({ err: err.message }));
-  }  
 
-    filteredList = newList => {
-    console.log(newList)
-      this.setState({recipes: newList})
-    
+    API.Reviews.all()
+      .then((resp) => {
+        this.setState({ reviews: resp.data, err: "" });
+      })
+      .catch((err) => this.setState({ err: err.message }));
   }
+
+  filteredList = (newList) => {
+    console.log(newList);
+    this.setState({ recipes: newList });
+  };
 
   //Define function then pass the function into leftRail and then within leftRail do the callback. Parameter that represents array
   //console.log the array parameter to see if its passed in properly. Then can pass it into the state of the homepage (will have to make a state in homepage). Then pass new array into cardLayout.
   render() {
     return (
       <div>
-        <Image centered src={require("../../assets/images/megabitesLogo.png")}/>
+        <Image
+          centered
+          src={require("../../assets/images/megabitesLogo.png")}
+        />
         <div className="bgStyle">
-          <TopRail filteredList={this.filteredList}/>
-          <LeftRail filteredList={this.filteredList}/>
-          <CardLayout recipes={this.state.recipes}/>
+          <TopRail filteredList={this.filteredList} />
+          <LeftRail filteredList={this.filteredList} />
+          <CardLayout
+            recipes={this.state.recipes}
+            reviews={this.state.reviews}
+          />
         </div>
       </div>
     );
