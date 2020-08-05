@@ -10,14 +10,27 @@ class HomePage extends Component {
 
   state = {
     recipes: [],
+    reviews: [],
     err: "",
   };
 
   componentDidMount() {
+    let recipes
+    let reviews
     API.Recipes.all()
       .then((response) => {
-        this.setState({ recipes: response.data, err: "" });
+        recipes = response.data
+        console.log(recipes)
+        // this.setState({ recipes: response.data, err: "" });
       })
+      .then(
+        API.Reviews.all()
+        .then((resp) => {
+          reviews = resp.data
+          this.setState({ recipes: recipes, reviews: reviews, err: "" })
+          console.log(this.state)
+        })
+      )
       .catch((err) => this.setState({ err: err.message }));
   }  
 
@@ -36,7 +49,7 @@ class HomePage extends Component {
         <div className="bgStyle">
           <TopRail filteredList={this.filteredList}/>
           <LeftRail filteredList={this.filteredList}/>
-          <CardLayout recipes={this.state.recipes}/>
+          <CardLayout recipes={this.state.recipes} reviews={this.state.reviews} />
         </div>
       </div>
     );

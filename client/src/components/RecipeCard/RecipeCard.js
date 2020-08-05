@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Card, Image, Responsive, Container, Button } from "semantic-ui-react";
+import { Card, Rating, Image, Responsive, Container, Button } from "semantic-ui-react";
 import AuthContext from '../../contexts/AuthContext';
 import API from '../../lib/API';
 import Emoji from '../Emoji/Emoji';
@@ -21,13 +21,22 @@ class RecipeCard extends Component {
   }
 
   render() {
-    const recipes = this.props.recipes.map((recipe) => {
+    const recipes = (this.props.recipes && this.props.reviews) ? this.props.recipes.map((recipe) => {
       const { authToken } = this.context;
       let link = "/recipe/" + recipe.id
       let button;
       if (authToken) {
         button = <Button color="red" onClick={() => this.handleSave(recipe.id)} className="save"><Emoji label="heart" symbol="❤" /> Save</Button>
       }
+      
+      let rating = 0
+
+      this.props.reviews.forEach(reviewData => {
+        if (recipe.id === reviewData.RecipeId) {
+          rating = Math.round(reviewData.stars)
+          console.log(rating)
+        }
+      })
 
       return (
         <Card key={recipe.id}>
@@ -50,11 +59,11 @@ class RecipeCard extends Component {
               <span>Submitted by: {recipe.createdBy}</span>
             </Card.Meta>
           </Card.Content>
+          <Card.Content><Rating icon="star" defaultRating={rating} maxRating={5} /></Card.Content>
           {button}
-          {/* <Card.Content>{extra}</Card.Content> */}
         </Card>
       );
-    });
+    }) : null;
 
     return (
       <Container>
